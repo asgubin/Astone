@@ -1,7 +1,18 @@
 package Lesson_01;
 
+/**
+ * QuickSort - generic for all type.
+ * QuickSort is not synchronized
+ *
+ * Author:           ASGubin
+ * Type parameters: ArrayList<T> – the type for sorting
+ */
 public class QuickSort {
 
+    /**
+     * sort() - sort ArrayList<T>
+     * @param list is the ArrayList<T> for sorting
+     */
     public static <T extends Comparable<? super T>> void sort(ArrayList<T> list) {
         // check for empty or null array
         if (list ==null || list.size()==0){

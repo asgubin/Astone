@@ -1,8 +1,25 @@
 package Lesson_01;
 
+/**
+ * ArrayList - generic for all type.
+ * ArrayList is not synchronized
+ *
+ * Author:           ASGubin
+ * Type parameters: <T> – the type of elements in this list
+ */
+
 public class ArrayList<T> {
+    /**
+     * DEFAULT_CAPACITY - capacity for default constructor
+     */
     private final int DEFAULT_CAPACITY = 10;
+    /**
+     * size - size of array
+     */
     private int size;
+    /**
+     * capacity - capacity of array
+     */
     private int capacity;
     private T[] array;
 
@@ -12,6 +29,10 @@ public class ArrayList<T> {
         capacity = DEFAULT_CAPACITY;
     }
 
+    /**
+     * add() - add element to ArrayList
+     * @param value is the element for add to ArrayList
+     */
     public void add(T value) {
         if ( (size + 1) >= capacity ) {
             resize();
@@ -29,6 +50,10 @@ public class ArrayList<T> {
         capacity = newCapacity;
     }
 
+    /**
+     * get() - get element by index
+     * @param index is the index at which the element is returned
+     */
     public T get(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
@@ -37,7 +62,11 @@ public class ArrayList<T> {
         return (T) array[index];
     }
 
-
+    /**
+     * remove() - remove element by index
+     * @param index is the index at which the element is remove
+     * @return T (after remove, return element)
+     */
     public T remove(int index) {
 
         T oldValue = get(index);
